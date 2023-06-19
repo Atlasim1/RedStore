@@ -22,7 +22,7 @@ while true do
         term.setCursorPos(3,6)
         local itemquantity = io.read()
         -- Formatting
-        local requesteditem = {request, itemquantity}
+        local requesteditem = request .. " of " .. itemquantity
         
         -- Request Item
         modem.transmit(6942, 6943, requesteditem)
