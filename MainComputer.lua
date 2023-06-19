@@ -10,7 +10,7 @@ while true do
     term.setCursorPos(1,1)
     print("Storage System")
     term.setTextColor(colors.white)
-    print("Type list to get a list of items")
+    print("Type list for items")
     print("Request Storage Item\n> ")
     term.setCursorPos(3,4)
     -- Get Request
