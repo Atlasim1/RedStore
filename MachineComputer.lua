@@ -1,12 +1,11 @@
 local modem = peripheral.find("modem") or error("No modem attached", 0)
 modem.open(6942)
 
-
 local itemfile = fs.open("handleitem.lua", "r")
 HANDLED_ITEM = itemfile.readAll()
 itemfile.close()
 
-
+print("Handling : ", HANDLED_ITEM)
 
 function outputItem(time)
     redstone.setOutput("back", true)
