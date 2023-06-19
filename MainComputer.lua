@@ -38,12 +38,14 @@ while true do
                 term.setTextColor(colors.white)
                 waitfor = false
                 break
-            elseif event[1] == "modem_message" and event[5] == requesteditem .. " done" then -- If No Timeout
-                term.setTextColor(colors.green)
-                print("Item Is Being Sent")
-                term.setTextColor(colors.white)
-                waitfor = false
-                break
+            elseif event[1] == "modem_message" then
+                if event[5] == requesteditem .. " done" then -- If No Timeout
+                    term.setTextColor(colors.green)
+                    print("Item Is Being Sent")
+                    term.setTextColor(colors.white)
+                    waitfor = false
+                    break
+                end
             else -- If stray event
                 term.getCursorPos() -- Do Nothing
 

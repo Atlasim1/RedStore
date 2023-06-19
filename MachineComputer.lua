@@ -33,7 +33,7 @@ while true do
     if event == "modem_message" then
         if message:split(" of ")[1] == HANDLED_ITEM then
             modem.transmit(replyChannel, 6942, HANDLED_ITEM .. " done")
-            pcall(outputItem, message[2])
+            pcall(outputItem, message:split(" of ")[2])
         end
     end
 end
