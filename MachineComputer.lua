@@ -20,7 +20,7 @@ local itemfile = fs.open("handleitem.lua", "r")
 HANDLED_ITEM = itemfile.readAll()
 itemfile.close()
 
-print("Handling : ", HANDLED_ITEM)
+print(HANDLED_ITEM)
 
 function outputItem(time)
     redstone.setOutput("back", true)
@@ -28,10 +28,12 @@ function outputItem(time)
     redstone.setOutput("back", false)
 end
 
-repeat
+while true do
     event, side, channel, replyChannel, message, distance = os.pullEvent("modem_message")
-until event == "message" and message:split()[1] == HANDLED_ITEM
-modem.transmit(replyChannel, 6942, HANDLED_ITEM .. " done")
-pcall(outputItem, message[2])
+    if event == "message" and message:split()[1] == HANDLED_ITEM then
+        modem.transmit(replyChannel, 6942, HANDLED_ITEM .. " done")
+        pcall(outputItem, message[2])
+    end
+end
 
 
