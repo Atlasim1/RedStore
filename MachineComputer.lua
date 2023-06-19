@@ -30,9 +30,11 @@ end
 
 while true do
     event, side, channel, replyChannel, message, distance = os.pullEvent("modem_message")
-    if event == "message" and message:split()[1] == HANDLED_ITEM then
-        modem.transmit(replyChannel, 6942, HANDLED_ITEM .. " done")
-        pcall(outputItem, message[2])
+    if event == "modem_message" then
+        if message:split(" of ")[1] == HANDLED_ITEM then
+            modem.transmit(replyChannel, 6942, HANDLED_ITEM .. " done")
+            pcall(outputItem, message[2])
+        end
     end
 end
 
