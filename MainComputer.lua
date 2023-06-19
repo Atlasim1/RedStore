@@ -25,7 +25,7 @@ while true do
         local requesteditem = {request, itemquantity}
         
         -- Request Item
-        modem.transmit(6924, 6943, requesteditem)
+        modem.transmit(6942, 6943, requesteditem)
         print("Requesting for " .. request)
         -- Wait For Answer from storage system
         local waitfor = true
