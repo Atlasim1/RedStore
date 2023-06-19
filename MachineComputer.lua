@@ -2,8 +2,8 @@ local modem = peripheral.find("modem") or error("No modem attached", 0)
 modem.open(6942)
 
 
-local itemfile = fs.open("list","r")
-HANDLED_ITEM == itemfile.read()
+local itemfile = fs.open("list", "r")
+HANDLED_ITEM = itemfile.readAll()
 itemfile.close()
 
 
