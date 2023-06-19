@@ -1,6 +1,6 @@
 local modem = peripheral.find("modem") or error("No modem attached", 0)
 
-modem.open(6942)
+modem.open(6943)
 
 
 while true do
@@ -22,11 +22,11 @@ while true do
         term.setCursorPos(3,6)
         local itemquantity = io.read()
         -- Formatting
-        local requesteditem = itemquantity .. " of " .. request
+        local requesteditem = {request, itemquantity}
         
         -- Request Item
         modem.transmit(6924, 6943, requesteditem)
-        print("Requesting for " .. requesteditem)
+        print("Requesting for " .. request)
         -- Wait For Answer from storage system
         local waitfor = true
         while waitfor do -- Wait for Awnser Event
