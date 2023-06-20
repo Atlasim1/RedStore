@@ -12,7 +12,7 @@ end
 
 drawList(0)
 
-while true do
+--[[while true do
     -- Fancyness
     term.setTextColor(colors.yellow)
     term.clear()
@@ -64,4 +64,5 @@ while true do
     sleep(3) -- Wait for User to be able to read before Clearing Screen
     term.clear()
     
-end
+end 
+--]]
