@@ -34,10 +34,6 @@ while true do
         if message:split(" of ")[1] == HANDLED_ITEM then
             modem.transmit(replyChannel, 6942, HANDLED_ITEM .. " done")
             pcall(outputItem, message:split(" of ")[2])
-        else
-            modem.transmit(replyChannel, 6942, "NotAvail")
         end
     end
 end
-
-
