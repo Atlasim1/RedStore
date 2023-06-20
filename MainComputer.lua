@@ -2,6 +2,15 @@ local modem = peripheral.find("modem") or error("No modem attached", 0)
 
 modem.open(6943)
 
+function drawList()
+    term.setBackgroundColour(colors.blue)
+    term.setTextColour(colors.white)
+    term.clear()
+    term.setCursorPos(((term.getSize()) / 2) - 7, 1)
+    term.write("STORAGE SYSTEM")
+end
+
+drawList(0)
 
 while true do
     -- Fancyness
