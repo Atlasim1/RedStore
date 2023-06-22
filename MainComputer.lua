@@ -160,7 +160,7 @@ while true do
 					term.write(">")
 	
 					rqi = citm["id"].." of "..quant
-					modem.transmit(6942, 6943, requesteditem)
+					modem.transmit(6942, 6943, rqi)
 					local wf = true
 					while wf do
 						event = {os.pullEvent()}
